@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Result!</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<div class="login">
+<h2 style="color:aliceblue">Hello! Here is the solution.</h2>
+<p style="color:aliceblue">Your Body Mass Index : {{ bmi }}.</p>
+   <p style="color:aliceblue">You are {{ status }}!</p>
+   <h3 style="color:aliceblue">Suggested diet plan based on your health and fitness goal is : </h3>
+   <p style="color:aliceblue"> {{ diet }}</p>
+	<h1 style="color:aliceblue">Add to Calendar</h1>
+    <form action="{{ url_for('calendar')}}" method="post">
+    	<input type="email" name="gmailid" placeholder="Enter your calendar mail address" required="required"/>
+	<textarea name="diet" style="display:none;">{{ diet }}</textarea>
+      <button type="submit" class="btn btn-primary btn-block btn-large">Submit</button>
+    </form>
+ </div>
+ </div>
+</body>
+</html>

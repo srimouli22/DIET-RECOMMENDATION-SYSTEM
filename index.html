@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome!</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'> 
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"> 
+ <style>
+  body {
+    background-image: url("static/hai.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+  }
+  h1{
+    color : #000033
+  }
+</style> 
+</head>
+
+<body>
+  <div class="login1">
+    <h3><p><span id="datetime"></span></p><script>var dt = new Date();
+document.getElementById("datetime").innerHTML=dt.toLocaleString();</script>
+  </h3>
+  </div>
+
+ <div class="login">
+	<h1 >Welcome to the Mouli, Pavan, Swathi and Nithin's Dietician Plan !!!</h1>
+    <h3>Get customized diet food. Give your inputs to help us give you a personalized diet plan</h3>
+
+    <form action="{{ url_for('predict')}}" method="get">
+      <label>Enter your age</label>
+    	<input type="text" name="age" placeholder="Age" required="required" value="" />
+      <label>Enter your weight</label>
+      <input type="text" name="weight" placeholder="Weight (in kilograms)" required="required" value="" />
+      <label>Enter your height</label>
+	<input type="text" name="height" placeholder="Height (in meters)" required="required" value="" />
+  <label>Select your fitness goal</label>
+<select name = "fun" >
+	<option value = "0" selected disabled > Select</option> 
+	<option value = "1" >Weight Loss</option> 
+	<option value = "2" >Weight Gain</option>
+	<option value = "3" >Healthy</option>
+</select>
+<label>Vegetarian / Non-Vegetarian</label>
+      <input type="text" name="k" placeholder="Your preference of diet (1 for Veg and 0 for Non Veg)" required="required" value="" />
+      <button type="submit" class="btn btn-primary btn-block btn-large">Get diet</button>
+    </form>
+
+ </div>
+
+</body>
+</html>
